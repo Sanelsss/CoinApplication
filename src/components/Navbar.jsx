@@ -10,7 +10,7 @@ import {
 } from "@ant-design/icons";
 import icon from "../images/image.png";
 const Navbar = () => {
-  const [activeMenu, setActiveMenu] =    useState(true);
+  const [activeMenu, setActiveMenu] = useState(true);
   const [screenSize, setScreenSize] = useState(null);
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -46,7 +46,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </Menu.Item>
           <Menu.Item icon={<FundOutlined />}>
-            <Link to="/cryptocurrencies">Crypto</Link>
+            <Link to="/cryptocurrencies">Cryptocurrencies</Link>
           </Menu.Item>
           <Menu.Item icon={<MoneyCollectOutlined />}>
             <Link to="/exchanges">Extension</Link>

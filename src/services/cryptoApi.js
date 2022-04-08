@@ -1,32 +1,35 @@
-import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoApiHeaders = {
-    'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com',
-    'X-RapidAPI-Key': '9e4c05d027mshbb321f55423b72fp1f0558jsn992f762a5849'
-}
-const baseUrl = 'https://coinranking1.p.rapidapi.com';
-const createRequest = (url)=>({url,headers:cryptoApiHeaders})
+  "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+  "X-RapidAPI-Key": "9e4c05d027mshbb321f55423b72fp1f0558jsn992f762a5849",
+};
+const baseUrl = "https://coinranking1.p.rapidapi.com";
+const createRequest = (url) => ({ url, headers: cryptoApiHeaders });
 export const cryptoApi = createApi({
-    reducerPath :'cryptoApi',
-    baseQuery : fetchBaseQuery({baseUrl}),
-    endpoints :(builder)=>  ({
+  reducerPath: "cryptoApi",
+  baseQuery: fetchBaseQuery({ baseUrl }),
+  endpoints: (builder) => ({
     getCryptos: builder.query({
-    query:(count)=>createRequest(`/coins?limit=${count}`)
-}),
-getCryptoDetails: builder.query({
-  query:(coinId)=>createRequest(`/coin/${coinId}`)
-}),
-getCryptoHistory: builder.query({
-  query:({coinId,timePeriod})=>createRequest(`coin/${coinId}/history?timeperiod=${timePeriod}`),
-}),
-getExchanges: builder.query({
-  query:()=>  createRequest('/exchanges'),
-})
-    })
-
+      query: (count) => createRequest(`/coins?limit=${count}`),
+    }),
+    getCryptoDetails: builder.query({
+      query: (coinId) => createRequest(`/coin/${coinId}`),
+    }),
+    getCryptoHistory: builder.query({
+      query: ({ coinId, timePeriod }) =>
+        createRequest(`coin/${coinId}/history?timeperiod=${timePeriod}`),
+    }),
+    getExchanges: builder.query({
+      query: () => createRequest("/exchanges"),
+    }),
+  }),
 });
 export const {
-    useGetCryptosQuery,useGetCryptoDetailsQuery,useGetCryptoHistoryQuery,useGetExchangesQuery
+  useGetCryptosQuery,
+  useGetCryptoDetailsQuery,
+  useGetCryptoHistoryQuery,
+  useGetExchangesQuery,
 } = cryptoApi;
 /* 
 const options = {
