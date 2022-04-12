@@ -1,7 +1,7 @@
 {
   "name": "cryptoapp",
   "version": "0.1.0",
-  "homepage": " http://Sanelsss.io/CoinApp.git",
+  "homepage": " http://Sanelsss.io/CoinApp",
   "private": true,
   "dependencies": {
     "-": "^0.0.1",
