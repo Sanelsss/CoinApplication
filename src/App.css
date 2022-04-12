@@ -2,9 +2,9 @@
   --text-primary: #000;
   --bgPrimary: #fff;
   --bgSecondary: #f9f9f9;
-  --pink: #0071bd;
-  --light-blue: #e6f7ff;
-  --border: #d9d9d9;
+  --pink: #0a1c5a;
+  --light-blue: #064b6b;
+  --border: #c8ced1;
 }
 
 * {
@@ -20,11 +20,12 @@ a:hover {
 .app {
   display: flex;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .navbar {
   flex: 0.2;
-  background-color: rgb(0, 21, 41);
+  background-color: #001529;
 }
 
 .main {
@@ -33,14 +34,15 @@ a:hover {
 }
 .routes {
   padding: 20px;
+  background-color: #fff;
 }
 .nav-container {
   position: fixed;
   left: 0;
-  margin: 10px;
+  margin: 0px;
   height: 100vh;
   margin: 0px;
-  background-color: rgb(0, 21, 41);
+  background-color: #001529;
 }
 
 .logo-container {
@@ -59,10 +61,12 @@ a:hover {
 .menu-control-container {
   display: none !important;
   position: absolute !important;
-  right: 10px !important;
+  right: 15px !important;
   top: 25px !important;
-  font-size: 1.2rem !important;
-  background-color: var(--bgSecondary) !important;
+  font-size: 1.1rem !important;
+  /*   background-color: var(--bgSecondary) !important;
+ */
+  background-color: #001529 !important;
   border: none !important;
 }
 
@@ -77,17 +81,34 @@ a:hover {
   .main {
     margin-left: 50px;
   }
+  .heading {
+    justify-content: center !important;
+    display: flex;
+    color: #000 !important;
+  }
+  .news-image {
+    max-width: auto;
+    max-height: auto;
+  }
 }
 
 @media screen and (max-width: 1170px) {
   .main {
     margin-left: 50px;
   }
+  .news-image {
+    max-width: 70px;
+    max-height: auto;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   .main {
     margin-left: 100px;
+  }
+  .news-image {
+    max-width: 80px;
+    max-height: auto;
   }
 }
 
@@ -118,6 +139,8 @@ a:hover {
 
   .menu-control-container {
     display: block !important;
+    background-color: #fff;
+    color: #f9f9f9 !important;
   }
 
   .ant-menu {
@@ -135,7 +158,13 @@ a:hover {
 .coin-detail-container {
   margin: 30px;
 }
-
+.news-image {
+  /* max-width: 50px;
+  max-height: 150px; */
+  margin: 10px;
+  justify-content: right;
+  aspect-ratio: 2;
+}
 .coin-heading-container {
   display: flex;
   justify-content: center;
@@ -257,7 +286,9 @@ a:hover {
 
 .coin-link:hover,
 .coin-stats:hover {
-  background-color: var(--bgSecondary);
+  /*   background-color: var(--bgSecondary);
+ */
+  background-color: "#000";
 }
 
 @media screen and (max-width: 1000px) {
@@ -267,6 +298,7 @@ a:hover {
   .coin-desc-link {
     flex-direction: column;
   }
+
   .stats-container h2 {
     margin-top: 0px;
   }
@@ -287,7 +319,7 @@ a:hover {
 }
 
 .select-news {
-  width: 180px;
+  width: 250px;
 }
 .news-card {
   min-height: 300px !important;

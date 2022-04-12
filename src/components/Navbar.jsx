@@ -8,10 +8,12 @@ import {
   FundOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
-import icon from "../images/image.png";
+import icon from "../images/aimg.jpg";
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [screenSize, setScreenSize] = useState(null);
+  const [active, setActive] = useState(true);
+
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -28,20 +30,16 @@ const Navbar = () => {
   return (
     <div className="nav-container">
       <div className="logo-container">
-        <Avatar src={icon} size="large" />
+        <Avatar src={icon} size="large" className="logo" />
         <Typography.Title level={2} className="logo">
-          <Link to="/">Cryptoapp</Link>
+          <Link to="/">CryptoApp</Link>
         </Typography.Title>
       </div>
-      <Button
-        className="menu-control-container"
-        onClick={() => setActiveMenu(!activeMenu)}
-      >
-        {" "}
-        <MenuOutlined />
+      <Button className="menu-control-container">
+        <MenuOutlined onClick={() => setActive(!active)} />
       </Button>
-      {activeMenu && (
-        <Menu theme="dark">
+      {(activeMenu || active) && (
+        <Menu onClick={() => setActive(!active)} theme="dark">
           <Menu.Item icon={<HomeOutlined />}>
             <Link to="/">Home</Link>
           </Menu.Item>
@@ -60,7 +58,5 @@ const Navbar = () => {
   );
 };
 {
-  /*        <Button className='menu-control-container'></Button>
-   */
 }
 export default Navbar;

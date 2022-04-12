@@ -13,10 +13,10 @@ const Homepage = () => {
   if (isFetching) return <Loader />;
   return (
     <>
-      <Title level={2} className="heading">
-        Global Crypto Stacks
+      <Title level={1} className="heading">
+        Global Crypto Coin Stacks
       </Title>
-      <Row>
+      <Row lg={6}>
         <Col span={12}>
           <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
         </Col>
@@ -53,7 +53,7 @@ const Homepage = () => {
           <Link to="/cryptocurrencies">Show more</Link>
         </Title>
       </div>
-      
+
       <Cryptocurrencies simplified />
       <div className="home-heading-container">
         <Title level={2} className="home-title">

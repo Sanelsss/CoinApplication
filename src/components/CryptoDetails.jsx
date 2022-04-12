@@ -108,17 +108,9 @@ const CryptoDetails = () => {
         </Title>
         <p>{cryptoDetails.name} live price in US dollars.</p>
       </Col>
-      <Select
-        defaultValue="7d"
-        className="select-timeperiod"
-        placeholder="select time period"
-        onChange={(value) => setTimePeriod(value)}
-      >
-        {time.map((date) => (
-          <Option key={date}>{date}</Option>
-        ))}
-      </Select>
+
       <LineChart
+        /* isFetching */
         coinHistory={coinHistory}
         currentPrice={millify(cryptoDetails.price)}
         coinName={cryptoDetails.name}

@@ -1,45 +1,37 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
+import React, { useEffect, useState } from "react";
+import { Chart as ChartJS, defaults, Line } from "react-chartjs-2";
 import { Col, Row, Typography } from "antd";
-
+import Chart from "react-apexcharts";
+import millify from "millify";
 const { Title } = Typography;
 
 const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   const coinPrice = [];
   const coinTimestamp = [];
-
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-    coinPrice.push(coinHistory?.data?.history[i].price);
+    coinPrice.push(Math.floor(coinHistory?.data?.history[i].price));
   }
-
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
     coinTimestamp.push(
       new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString()
     );
   }
-  const data = {
-    labels: coinTimestamp,
-    datasets: [
+  console.log(coinHistory);
+  const state = {
+    options: {
+      chart: {
+        id: "basic-bar",
+      },
+      xaxis: {
+        categories: coinTimestamp.slice(0, 100),
+      },
+    },
+    series: [
       {
-        label: "Price In USD",
-        data: coinPrice,
-        fill: false,
-        backgroundColor: "#0071bd",
-        borderColor: "#0071bd",
+        name: "series-1",
+        data: coinPrice?.slice(0, 100),
       },
     ],
-  };
-
-  const options = {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-          },
-        },
-      ],
-    },
   };
 
   return (
@@ -57,7 +49,9 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
           </Title>
         </Col>
       </Row>
-      <Line data={data} options={options} />
+
+      <Chart options={state.options} series={state.series} type="line" />
+      {/* <Line data={data} options={options} /> */}
     </>
   );
 };
