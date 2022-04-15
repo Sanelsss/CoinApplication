@@ -14,7 +14,7 @@ const Homepage = () => {
   return (
     <>
       <Title level={1} className="heading">
-        Global Stacks
+        Global Crypyo Stacks
       </Title>
       <Row lg={6}>
         <Col span={12}>
