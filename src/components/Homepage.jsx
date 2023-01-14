@@ -16,8 +16,8 @@ const Homepage = () => {
       <Title level={1} className="heading">
         Global Stacks
       </Title>
-      <Row lg={6}>
-        <Col span={12}>
+      <Row  lg={6}>
+        <Col  span={12}>
           <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
         </Col>
         <Col span={12}>

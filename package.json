@@ -1,7 +1,7 @@
 {
   "name": "cryptoapp",
   "version": "0.1.0",
-  "homepage": " http://Sanelsss.io/CoinApp",
+  "homepage": " https://Sanelsss.github.io/CoinApplication",
   "private": true,
   "dependencies": {
     "-": "^0.0.1",
@@ -14,7 +14,6 @@
     "apexcharts": "^3.35.0",
     "axios": "^0.26.1",
     "chart.js": "^3.7.1",
-    "gh-pages": "^3.2.3",
     "html-react-parser": "^1.4.10",
     "millify": "^4.0.0",
     "moment": "^2.29.1",
@@ -53,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
